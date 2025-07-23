@@ -1,12 +1,24 @@
-import { APIProvider, Map } from '@vis.gl/react-google-maps';
+import { APIProvider, Map } from "@vis.gl/react-google-maps";
+import type { MapCameraChangedEvent } from '@vis.gl/react-google-maps';
 
-const MapComponent = () => {
-  const position = { lat: 35.681236, lng: 139.767125 }; // 東京駅の緯度経度
+interface MapComponentProps {
+  cameraState: { center: { lat: number; lng: number; }; zoom: number; };
+  handleCameraChange: (ev: MapCameraChangedEvent) => void;
+}
 
+const MapComponent = ({ cameraState, handleCameraChange }: MapComponentProps) => {
   return (
-    <div style={{ height: '100vh', width: '100%' }}>
+    <div style={{ height: "100vh", width: "100%", position: "relative" }}>
       <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-        <Map center={position} zoom={15} />
+        <Map
+          center={cameraState.center}
+          zoom={cameraState.zoom}
+          onCameraChanged={handleCameraChange}
+          gestureHandling={"greedy"}
+          zoomControl={true}
+          scrollwheel={true}
+          mapTypeControl={false}
+        />
       </APIProvider>
     </div>
   );
