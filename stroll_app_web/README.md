@@ -37,5 +37,6 @@ npm install
 ### 開発サーバーの起動
 
 ```bash
+# /stroll_app_web/stroll_app_webの階層で実行
 npm run dev
 ```
