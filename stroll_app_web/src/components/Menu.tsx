@@ -8,10 +8,10 @@ const Menu = ({ resetMap }: MenuProps) => {
     <div 
       style={{
         position: 'absolute',
-        top: '5vh',
-        left: 0,
+        top: '1vh',
+        left: '1vh',
         width: '25vw',
-        height: '90vh',
+        height: '98vh',
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
         zIndex: 1,
         padding: '1rem',
