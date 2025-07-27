@@ -18,6 +18,7 @@
 ## 技術的内容
 - フレームワークに`React`、CSSフレームワークに`Tailwind`を使用します。
 - Google Mapの表示に`Google Maps Platform`の`Maps JavaScript API`、ライブラリに`React Google Maps`を使用します。
+- `.env.sample`の内容をコピーして、`.env`に変更したのち、`VITE_GOOGLE_MAPS_API_KEY`に`Maps JavaScript API`を使用できるAPIキーを設定します。
 
 ### 使用技術
 
